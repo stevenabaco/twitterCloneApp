@@ -1,0 +1,6 @@
+curl -u 'G0rV75XTW07I7JgtUemm0C7dU:nr0g64kKqlSOt17XiXbSUeUuOsI9qg3llmYD9Zvd4LYDHdro09' \
+  --data 'grant_type=client_credentials' \
+  'https://api.twitter.com/oauth2/token'
+
+
+  {"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAAB1kIQEAAAAAsag28gsbEG%2BkKf7HT%2Bzgze0m0fs%3DLOZxOAaL6SObV4q68suzDYtdxLExmyk9ynIuB5HJFpjxVMu0eU"}
