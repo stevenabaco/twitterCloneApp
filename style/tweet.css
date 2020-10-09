@@ -8,7 +8,11 @@
 
 .tweet-user-info {
     height: 20px;
-    background-color: blue
+    display: flex;
+    color: white;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .tweet-images-container {
@@ -34,4 +38,26 @@
     margin-bottom: 10px;
     font-size: 10px;
     color: #475250;
+}
+
+.tweet-user-profile {
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #979797;
+}
+
+.tweet-user-name-container {
+    margin-left: 8px;
+    color: white;
+}
+
+.tweet-user-fullname {
+    font-size: 10px;
+}
+
+.tweet-user-username {
+    font-size: 8px;
 }
