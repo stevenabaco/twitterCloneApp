@@ -52,21 +52,56 @@ body {
 }
 
 .tweets-sidebar-container {
-    background-color: cyan;
     flex: 1;
     display: flex;
 }
 
 .tweets-sidebar {
-    width: 200px;
+    width: 300px;
     height: 500px;
-    margin: 20px;
     background-color: white;
+    margin-top: 30px;
+    border: 1px solid #979797;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.tweets-trending {
+    background-color: #f2f2f2;
+    border-radius: 40px;
+    margin: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tweets-trending h5 {
+    font-size: 12px;
+    color: #848586;
+    margin-top: 0;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.tweets-trending ul {
+    list-style: none;
+    border: 1 solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.tweets-trending ul li {
+    color: #a5a5a6;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 20px;
+    border-top: 1px solid #d8d8d8;
+    padding-left: 20px;
+    cursor: pointer;
 }
 
 .tweets-list {
-    height: 500px;
     margin: 20px;
+
 }
 
 .navigation {
@@ -105,4 +140,3 @@ body {
     border-radius: 50%;
     border: 1px solid #979797;
 }
-
