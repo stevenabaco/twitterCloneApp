@@ -67,15 +67,6 @@ body {
 .tweets-list {
     height: 500px;
     margin: 20px;
-    background-color: #516bf0;
-}
-
-.tweet-container {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    height: 100px;
-    margin: 10px
 }
 
 .navigation {
@@ -114,3 +105,4 @@ body {
     border-radius: 50%;
     border: 1px solid #979797;
 }
+
