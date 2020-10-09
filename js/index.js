@@ -1,29 +1,34 @@
 const URL = "http://localhost:3000/tweets";
 
+
+
 /**
  * Retrive Twitter Data from API
  */
 const getTwitterData = () => {
-
+    const url = "http://localhost:3000/tweets?q=coding&count=10";
+    fetch(url).then((response) => {
+        return response.json();
+    }).then((data) => {
+        console.log(data);
+    })
 }
 
+getTwitterData();
 /**
  * Save the next page data
  */
-const saveNextPage = (metadata) => {
-}
+const saveNextPage = (metadata) => {}
 
 /**
  * Handle when a user clicks on a trend
  */
-const selectTrend = (e) => {
-}
+const selectTrend = (e) => {}
 
 /**
  * Set the visibility of next page based on if there is data on next page
  */
-const nextPageButtonVisibility = (metadata) => {
-}
+const nextPageButtonVisibility = (metadata) => {}
 
 /**
  * Build Tweets HTML based on Data from API
