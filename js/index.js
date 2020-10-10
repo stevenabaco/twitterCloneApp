@@ -1,5 +1,6 @@
 const URL = "http://localhost:3000/tweets";
 
+let nextPageUrl = null;
 
 const onEnter = (e) => {
     if (e.key == "Enter") {
@@ -19,15 +20,19 @@ const getTwitterData = () => {
         return response.json();
     }).then((data) => {
         buildTweets(data.statuses);
+        saveNextPage(data.search_metadata)
     })
 }
 
-getTwitterData();
 /**
  * Save the next page data
  */
 const saveNextPage = (metadata) => {}
-
+if (metadata.next_results) {
+        nextPageUrl = `${URL}${metadata.next_results}`
+} else {
+    nextPageUrl = null;
+    }
 /**
  * Handle when a user clicks on a trend
  */
