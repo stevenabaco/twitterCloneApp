@@ -36,6 +36,7 @@ body {
 .tweets-search-container {
     margin: 20px;
     margin-top: 30px;
+    margin-bottom: 0px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid white;
@@ -49,6 +50,7 @@ body {
 .fa-search {
     color: white;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 .tweets-sidebar-container {
@@ -101,6 +103,7 @@ body {
 
 .tweets-list {
     margin: 20px;
+    margin-top: 0px;
 
 }
 
