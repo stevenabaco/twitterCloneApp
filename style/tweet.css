@@ -20,9 +20,20 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
-    height: 200px;
+    height: 500px;
     border: 1px solid #1c1c1c;
     border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.tweet-image {
+    background-image: url(https://images.unsplash.com/photo-1602163825119-a790d0ab94d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);
+    flex-basis: 50%;
+    background-size: cover;
+    background-position: center;
+    flex-grow: 1;
 }
 
 .tweet-text-container {
