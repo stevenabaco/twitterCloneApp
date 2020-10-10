@@ -7,32 +7,43 @@ const onEnter = (e) => {
         getTwitterData();
     }
 }
+
+const onNextPage = () => {
+    if (nextPageUrl) {
+        getTwitterData(true)
+    }
+}
 /**
  * Retrive Twitter Data from API
  */
-const getTwitterData = () => {
+const getTwitterData = (nextPage = false) => {
     const query = document.getElementById('user-search-input').value;
     if (!query) return;
     const encodedQuery = encodeURIComponent(query);
     const url = "http://localhost:3000/tweets?q=coding&count=10";
-    const fullUrl = `${URL}?q=${encodedQuery}&count=10`
+    let fullUrl = `${URL}?q=${encodedQuery}&count=10`
+    if (nextPage && nextPageUrl) {
+        fullUrl = nextPageUrl;
+    }
     fetch(fullUrl).then((response) => {
         return response.json();
     }).then((data) => {
-        buildTweets(data.statuses);
+        buildTweets(data.statuses, nextPage);
         saveNextPage(data.search_metadata)
+        nextPageButtonVisibility(data.search_metadata);
     })
 }
 
 /**
  * Save the next page data
  */
-const saveNextPage = (metadata) => {}
-if (metadata.next_results) {
+const saveNextPage = (metadata) => {
+    if (metadata.next_results) {
         nextPageUrl = `${URL}${metadata.next_results}`
-} else {
-    nextPageUrl = null;
+    } else {
+        nextPageUrl = null;
     }
+}
 /**
  * Handle when a user clicks on a trend
  */
@@ -44,7 +55,13 @@ const selectTrend = (e) => {
 /**
  * Set the visibility of next page based on if there is data on next page
  */
-const nextPageButtonVisibility = (metadata) => {}
+const nextPageButtonVisibility = (metadata) => {
+    if (metadata.next_results) {
+        document.getElementById('next-page').style.visibility = "visible"
+    } else {
+        document.getElementById('next-page').style.visibility = "hidden"
+    }
+}
 
 /**
  * Build Tweets HTML based on Data from API
@@ -85,8 +102,11 @@ const buildTweets = (tweets, nextPage) => {
                 </div>
         `
     })
-
-    document.querySelector(`.tweets-list`).innerHTML = twitterContent;
+    if (nextPage) {
+        document.querySelector('.tweets-list').insertAdjacentHTML('beforeend', twitterContent);
+    } else {
+        document.querySelector(`.tweets-list`).innerHTML = twitterContent;
+    }
 }
 
 /**

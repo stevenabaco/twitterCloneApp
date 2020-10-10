@@ -109,7 +109,8 @@
     margin-bottom: 50px;
     height: 30px;
     cursor: pointer;
-    transition: all 0.15s ease-in-out
+    transition: all 0.15s ease-in-out;
+    visibility: hidden;
 }
 
 .next-page-container:hover {
