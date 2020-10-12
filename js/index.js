@@ -134,16 +134,17 @@ const buildVideo = (mediaList) => {
     mediaList.map((media) => {
         if (media.type == "video") {
             videoExists = true;
+            const videoVariant = media.video_info.variants.find((variant) => variant.content_type == 'video/mp4');
             videoContent += `
             <video controls>
-                <source src="${media.video_info.variants[0].url}" type="video/mp4">
+                <source src="${videoVariant.url}" type="video/mp4">
             </video>
             `
         } else if (media.type == "animated_gif") {
             videoExists = true;
             videoContent += `
             <video loop autoplay>
-                <source src="${media.video_info.variants[0].url}" type="video/mp4">
+                <source src="${videoVariant.url}" type="video/mp4">
             </video>
             `
         }

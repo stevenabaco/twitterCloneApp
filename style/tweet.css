@@ -117,3 +117,9 @@
     background-color: #1c1c1c;
     color: white;
 }
+
+.tweets-welcome-message {
+    color: white;
+    margin-bottom: 0;
+    text-align: center;
+}
